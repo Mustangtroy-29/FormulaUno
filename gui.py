@@ -1,11 +1,19 @@
+import customtkinter
 from customtkinter import *
+from my_package import driver_data
 
-def main():
-	app= CTk()
-	app.geometry("1920x1080")
-	btn=CTkButton(master=app, text="Click Me")
-	btn.place(relx=0.5, rely=0.5, anchor="center")
-	app.mainloop()
+app = CTk()
+app.title("Formula Uno")
+app.geometry("600x650")
 
-if __name__ == '__main__':
-	main()
+my_combobox2 = CTkComboBox(app, values=driver_data.season)
+my_combobox2.pack(pady=20)
+
+
+my_combobox1 = CTkComboBox(app, values=driver_data.drivers)
+my_combobox1.pack(pady=60)
+
+
+
+app.mainloop()
+
